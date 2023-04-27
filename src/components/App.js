@@ -12,17 +12,19 @@ import AddPlacePopup from './AddPlacePopup.js';
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 import Register from './Register.js';
 import Login from './Login.js';
-
+import ProtectedRoute from './ProtectedRoute.js';
+import { Route, Routes, Navigate } from "react-router-dom";
 
 
 function App() {
-  
+
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsEditPlacePopupOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null)
   const [currentUser, setCurrentUser] = useState({})
   const [cards, setCards] = useState([]);
+  const [loggedIn, setloggedIn] = useState(false);
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true)
@@ -138,18 +140,26 @@ function App() {
     <>
       <CurrentUserContext.Provider value={currentUser}>
         <Header />
-       {/* <Login />
-        <Register /> */}
-        <Main
-          onEditAvatar={handleEditAvatarClick}
-          onEditProfile={handleEditProfileClick}
-          onAddPlace={handleEditPlaceClick}
-          onCardClick={handleCardClick}
-          onCardLike={handleCardLike}
-          onCardDelete={handleCardDelete}
-          cards={cards}
-        />
-        <Footer />
+        <Routes>
+          <Route path="/sign-up" element={<Register />} />
+          <Route path="/sign-in" element={<Login />} />
+          <Route path="/"
+            element={<ProtectedRoute
+              element={Main}
+              onEditAvatar={handleEditAvatarClick}
+              onEditProfile={handleEditProfileClick}
+              onAddPlace={handleEditPlaceClick}
+              onCardClick={handleCardClick}
+              onCardLike={handleCardLike}
+              onCardDelete={handleCardDelete}
+              cards={cards}
+              loggedIn={loggedIn}
+            />}
+          />
+          <Route path="/" element={<ProtectedRoute element={Footer} loggedIn />} />
+        </Routes>
+
+
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}

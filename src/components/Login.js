@@ -1,7 +1,7 @@
 import './style/Register.css'
 import React from 'react';
 
-function login() {
+function Login() {
     return (
         <section className='enter'>
         <h2 className='enter__title'>Вход</h2>
@@ -14,4 +14,4 @@ function login() {
     );
   }
   
-  export default login;
+  export default Login;

@@ -71,6 +71,7 @@
     line-height: 22px;
     text-align: center;
     color: #000000;
+    min-width: 100%;
 }
 
 .enter__question-link {
