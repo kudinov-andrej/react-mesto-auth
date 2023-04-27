@@ -1,0 +1,92 @@
+.enter {
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 358px;
+    background: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+
+}
+
+.enter__title {
+    margin: 0;
+    padding: 0;
+    max-width: 358px;
+    margin-bottom: 50px;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.enter__form {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 358px;
+    background: #000000;
+}
+
+
+
+.enter__input {
+    margin: 0;
+    padding: 0;
+    width: 358px;
+    padding-bottom: 13px;
+    margin-bottom: 30px;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 2px solid #CCCCCC;
+    color: #FFFFFF;
+    background: #000000;
+}
+.enter__input:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+
+.enter__button {
+    margin: 0;
+    padding: 0;
+    margin-top: 186px;
+    padding: 15px 84px;
+    cursor: pointer;
+    background: #FFFFFF;
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+}
+
+.enter__question-link {
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+    max-width: 358px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.enter__question-link:hover {
+    cursor: pointer;
+
+}

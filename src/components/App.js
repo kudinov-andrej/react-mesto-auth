@@ -10,9 +10,13 @@ import EditProfilePopup from './EditProfilePopup.js';
 import EditAvatarPopup from './EditAvatarPopup.js';
 import AddPlacePopup from './AddPlacePopup.js';
 import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
+import Register from './Register.js';
+import Login from './Login.js';
+
+
 
 function App() {
-
+  
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsEditPlacePopupOpen] = useState(false);
@@ -122,7 +126,7 @@ function App() {
 
   function handleAddPhoto(data) {
     api.createCard(data).then((newCard) => {
-      setCards([newCard, ...cards]); 
+      setCards([newCard, ...cards]);
       closeAllPopups();
     }).catch((err) => {
       console.error(err);
@@ -134,6 +138,8 @@ function App() {
     <>
       <CurrentUserContext.Provider value={currentUser}>
         <Header />
+       {/* <Login />
+        <Register /> */}
         <Main
           onEditAvatar={handleEditAvatarClick}
           onEditProfile={handleEditProfileClick}
