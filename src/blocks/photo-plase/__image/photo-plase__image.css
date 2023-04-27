@@ -1,0 +1,12 @@
+.photo-plase__image {
+    margin: 0;
+    padding: 0;
+    height: 282px;
+    min-width: 282px;
+    background-color: black;
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    cursor: pointer;
+
+}

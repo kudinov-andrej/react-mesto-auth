@@ -1,0 +1,12 @@
+.popap__button_disabled {
+    background-color: transparent;
+    color: black;
+    opacity: 0.2;
+    border: 1px solid #000000;
+}
+
+.popap__button_disabled:hover {
+    cursor: default;
+    opacity: 0.2;
+
+}

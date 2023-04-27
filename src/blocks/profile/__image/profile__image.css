@@ -1,0 +1,28 @@
+.profile__image {
+    margin: 0;
+    padding: 0;
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile__image:hover {
+    opacity: 0.2;
+    cursor: pointer;
+  
+}
+
+
+@media screen and (max-width: 929px) {
+    .profile__button {
+        padding-right: 0;
+        padding-top: 38.25px;
+        padding-bottom: 22.25px;
+    }
+}
+
+

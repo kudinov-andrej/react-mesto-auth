@@ -1,0 +1,21 @@
+.photo-plase__delete-button {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    margin-left: 245px;
+    margin-top: 20px;
+    width: 18px;
+    height: 19px;
+    background: url(../../../image/корзина.svg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    display: none; 
+
+}
+
+.photo-plase__delete-button:hover {
+    cursor: pointer;
+    opacity: 0.6;
+}

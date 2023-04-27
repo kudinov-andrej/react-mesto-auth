@@ -1,0 +1,27 @@
+.profile__button {
+    padding: 0;
+    width: 120px;
+    height: 120px;
+    margin-top: 36.25px;
+    margin-right: 23.5px;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.profile__button:hover {
+background-image: url("../../../image/редактирование_фото_профиля.svg");
+background-repeat: no-repeat;
+background-position: center;
+
+}
+
+@media screen and (max-width: 929px) {
+    .profile__button {
+        margin-right: 0;
+        margin-top: 38.25px;
+        margin-bottom: 22.25px;
+    }
+}

@@ -1,0 +1,19 @@
+.popap__conteiner {
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    max-width: 430px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 929px) {
+    .popap__conteiner {
+        max-width: 282px;
+    }
+}

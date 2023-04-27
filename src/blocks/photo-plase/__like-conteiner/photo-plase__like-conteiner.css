@@ -1,0 +1,6 @@
+.photo-plase__like-conteiner {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    
+}

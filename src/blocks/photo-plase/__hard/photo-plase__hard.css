@@ -1,0 +1,17 @@
+.photo-plase__hard {
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../image/hards.svg);
+    margin-top: 23px;
+    margin-right: 20px;
+    background-color: transparent;
+    width: 22px;
+    height: 19px;
+    border: none;
+
+}
+
+.photo-plase__hard:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}

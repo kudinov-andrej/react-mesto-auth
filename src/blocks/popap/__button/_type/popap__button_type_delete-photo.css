@@ -1,0 +1,11 @@
+.popap__button_type_delete-photo {
+    margin: 0 36px 36px 36px;
+   
+}
+
+@media screen and (max-width: 929px) {
+    .popap__button_type_delete-photo {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+}

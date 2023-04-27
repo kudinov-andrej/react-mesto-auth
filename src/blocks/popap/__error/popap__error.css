@@ -1,0 +1,25 @@
+.popap__error {
+    margin: 0;
+    min-height: 30px;
+    width: 358px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    vertical-align: top;
+}
+
+@media screen and (max-width: 929px) {
+    .popap__error {
+        max-width: 238px;
+        margin-left: 22px;
+        margin-right: 22px;
+        min-height: 30px;
+        font-size: 11px;
+    }
+}
+
+.popap__error:last-child() {
+    margin-bottom: 31px;
+
+}
