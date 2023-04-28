@@ -12,7 +12,8 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 import Register from './Register.js';
 import Login from './Login.js';
 import ProtectedRoute from './ProtectedRoute.js';
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import * as auth from './auth.js';
 
 
 function App() {
@@ -23,7 +24,37 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null)
   const [currentUser, setCurrentUser] = useState({})
   const [cards, setCards] = useState([]);
-  const [loggedIn, setloggedIn] = useState(false);
+  const [isloggedIn, isSetloggedIn] = useState(false);
+  const [userData, setUserDats] = useState({
+    password: "",
+    email: "",
+  });
+  const [token, setToken] = useState("");
+
+  const registerUser = ({ password, email }) => {
+    auth
+      .register(password, email)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
+  const loginUser = ({ password, email }) => {
+    auth
+      .authorize(password, email)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
+
+
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true)
@@ -140,8 +171,15 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <Header />
         <Routes>
-          <Route path="/sign-up" element={<Register />} />
-          <Route path="/sign-in" element={<Login />} />
+          <Route path="/sign-up"
+            element={<Register
+              registerUser={registerUser}
+            />}
+
+          />
+          <Route path="/sign-in" element={<Login
+            loginUser={loginUser}
+          />} />
           <Route path="/"
             element={<ProtectedRoute
               element={Main}
@@ -152,7 +190,7 @@ function App() {
               onCardLike={handleCardLike}
               onCardDelete={handleCardDelete}
               cards={cards}
-              loggedIn={loggedIn}
+              isloggedIn={isloggedIn}
             />}
           />
         </Routes>

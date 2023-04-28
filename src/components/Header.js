@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRoutes, useNavigate, NavLink } from 'react-router-dom';
+import { useRoutes, NavLink } from 'react-router-dom';
 import Headerlogo from '../image/logo.svg';
 
 function Header() {
@@ -22,7 +22,8 @@ function Header() {
     path,
     element: routes[path]()
   })));
-  const path = useNavigate();
+
+
 
   return (
     <>
@@ -38,8 +39,3 @@ function Header() {
 
 export default Header;
 
-/* <>
-      <header className="header">
-        <img className="header__logo" src={Headerlogo} alt="логотип"/>
-      </header>
-    </> */
