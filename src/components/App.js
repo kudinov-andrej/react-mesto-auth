@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from './Header.js';
-import Footer from './Footer.js';
 import Main from './Main.js';
 import PopupWithForm from './PopupWithForm.js';
 import ImagePopup from './ImagePopup.js';
@@ -156,10 +155,7 @@ function App() {
               loggedIn={loggedIn}
             />}
           />
-          <Route path="/" element={<ProtectedRoute element={Footer} loggedIn />} />
         </Routes>
-
-
         <EditProfilePopup
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}

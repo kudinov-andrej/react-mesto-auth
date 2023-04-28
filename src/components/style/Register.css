@@ -74,6 +74,13 @@
     min-width: 100%;
 }
 
+.enter__button:hover {
+    opacity: 0.85;
+}
+
+.enter__button_type_register {
+    margin-bottom: 15px;
+}
 .enter__question-link {
     margin: 0;
     padding: 0;
