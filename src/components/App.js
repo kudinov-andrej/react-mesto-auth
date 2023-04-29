@@ -12,7 +12,7 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext.js';
 import Register from './Register.js';
 import Login from './Login.js';
 import ProtectedRoute from './ProtectedRoute.js';
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import * as auth from './auth.js';
 
 
@@ -24,36 +24,74 @@ function App() {
   const [selectedCard, setSelectedCard] = useState(null)
   const [currentUser, setCurrentUser] = useState({})
   const [cards, setCards] = useState([]);
-  const [isloggedIn, isSetloggedIn] = useState(false);
-  const [userData, setUserDats] = useState({
+  const [isloggedIn, setIsloggedIn] = useState(false);
+  const [userData, setUserData] = useState({
     password: "",
     email: "",
   });
   const [token, setToken] = useState("");
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const jwt = localStorage.getItem("jwt")
+    setToken(jwt)
+  }, [])
+
+  useEffect(() => {
+    if (!token) {
+      return
+    }
+    auth.getUserData(token).then((data) => {
+      setUserData(data);
+      setIsloggedIn(true)
+      navigate("/");
+    })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }, [token]);
 
   const registerUser = ({ password, email }) => {
     auth
       .register(password, email)
       .then((response) => {
-        console.log(response);
+        setUserData(response);
+        navigate("/sign-in");
       })
       .catch((err) => {
         console.log(err);
       })
   }
+
 
   const loginUser = ({ password, email }) => {
     auth
       .authorize(password, email)
       .then((data) => {
-        console.log(data);
+        setUserData({
+          password: data.password,
+          email: data.email
+        })
+        localStorage.setItem('jwt', data.token);
+        setToken(data.token);
+        setIsloggedIn(true);
       })
       .catch((err) => {
         console.log(err);
       })
   }
 
+  const logOut = () => {
+    localStorage.removeItem("jwt");
+    setIsloggedIn(false);
+    setToken("")
+    navigate("/sign-up")
 
+  }
 
 
   function handleEditAvatarClick() {
@@ -166,10 +204,14 @@ function App() {
   }
 
 
+
+
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
-        <Header />
+        <Header
+          logOut={logOut}
+          userData={userData} />
         <Routes>
           <Route path="/sign-up"
             element={<Register

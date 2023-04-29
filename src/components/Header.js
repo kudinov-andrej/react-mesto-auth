@@ -2,7 +2,16 @@ import React from 'react';
 import { useRoutes, NavLink } from 'react-router-dom';
 import Headerlogo from '../image/logo.svg';
 
-function Header() {
+
+
+
+function Header({ logOut, userData }) {
+
+  const closePage = () => {
+    logOut();
+  }
+
+
   const routes = {
     "/sign-up": () => (
       <NavLink className='header__link' to="/sign-in">Войти</NavLink>
@@ -12,8 +21,8 @@ function Header() {
     ),
     "/": () => (
       <div className='header__link-conteiner'>
-        <p className='header__email'>Моя почта</p>
-        <NavLink className='header__link' to="/sign-up">Выйти</NavLink>
+        <p className='header__email'>{userData.data?.email || ''}</p>
+        <NavLink className='header__link' to="/sign-up" onClick={closePage}>Выйти</NavLink>
       </div>
     )
   };
