@@ -16,6 +16,7 @@ import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import * as auth from './auth.js';
 
 
+
 function App() {
 
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
@@ -32,6 +33,7 @@ function App() {
   const [token, setToken] = useState("");
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt")
@@ -203,6 +205,12 @@ function App() {
     });
   }
 
+
+  if (location.pathname === '/') {
+    if (isLoading) {
+      return <div class="body__loader"></div>
+    }
+  }
 
 
 
