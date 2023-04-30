@@ -43,7 +43,7 @@ function Register({ registerUser }) {
                 />
                 <button type='submit' className='enter__button enter__button_type_register'>Зарегистрироваться</button>
             </form>
-            <NavLink className='header__link' to="/sign-in">Уже зарегистрированы? Войти</NavLink>
+            <NavLink className='enter__link' to="/sign-in">Уже зарегистрированы? Войти</NavLink>
         </section>
     );
 }

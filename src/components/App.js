@@ -14,6 +14,7 @@ import Login from './Login.js';
 import ProtectedRoute from './ProtectedRoute.js';
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import * as auth from './auth.js';
+import InfoToLip from './InfoTooltip.jsx';
 
 
 
@@ -22,6 +23,7 @@ function App() {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsEditPlacePopupOpen] = useState(false);
+  const [isInfoToLipPopupOpen, setIsInfoToLipPopupOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null)
   const [currentUser, setCurrentUser] = useState({})
   const [cards, setCards] = useState([]);
@@ -34,6 +36,10 @@ function App() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
+  const [isGoodImg, setIsGoodImg] = useState(false);
+  const [isGoodText, setIsGoodText] = useState(false)
+  const [isGoodAlt, setIsGoodAlt] = useState(false)
+
 
   useEffect(() => {
     const jwt = localStorage.getItem("jwt")
@@ -55,16 +61,24 @@ function App() {
       .finally(() => {
         setIsLoading(false)
       })
-  }, [token]);
+  }, [token, navigate]);
 
   const registerUser = ({ password, email }) => {
     auth
       .register(password, email)
       .then((response) => {
         setUserData(response);
-        navigate("/sign-in");
+        setIsGoodImg(true);
+        setIsGoodAlt(true)
+        setIsGoodText(true);
+        setIsInfoToLipPopupOpen(true);
+
       })
       .catch((err) => {
+        setIsGoodImg(false);
+        setIsGoodText(false);
+        setIsGoodAlt(false)
+        setIsInfoToLipPopupOpen(true);
         console.log(err);
       })
   }
@@ -126,15 +140,34 @@ function App() {
     setSelectedCard(null)
   }
 
+  function closePopupInfoToLip() {
+    setIsInfoToLipPopupOpen(false)
+    navigate("/sign-in");
+  }
+
+
+
+
+
   function handlePopupCloseClick(evt) {
+    if (isInfoToLipPopupOpen) {
+      if (evt.target.classList.contains('popap')) {
+        closePopupInfoToLip()
+      }
+    }
     if (evt.target.classList.contains('popap')) {
       closeAllPopups();
     }
   }
 
   useEffect(() => {
-    if (isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPlacePopupOpen || selectedCard) {
+    if (isEditAvatarPopupOpen || isEditProfilePopupOpen || isAddPlacePopupOpen || selectedCard || isInfoToLipPopupOpen) {
       function handleEsc(evt) {
+        if (isInfoToLipPopupOpen) {
+          if (evt.key === 'Escape') {
+            closePopupInfoToLip()
+          }
+        }
         if (evt.key === 'Escape') {
           closeAllPopups()
         }
@@ -146,7 +179,7 @@ function App() {
         document.removeEventListener('keydown', handleEsc);
       }
     }
-  }, [isEditAvatarPopupOpen, isEditProfilePopupOpen, isAddPlacePopupOpen, selectedCard]);
+  }, [isEditAvatarPopupOpen, isEditProfilePopupOpen, isAddPlacePopupOpen, isInfoToLipPopupOpen, selectedCard]);
 
 
   function handleCardLike(card) {
@@ -267,6 +300,13 @@ function App() {
           onClose={closeAllPopups}
           onCloseClick={handlePopupCloseClick}
         />
+        <InfoToLip
+          isOpen={isInfoToLipPopupOpen}
+          isGoodImg={isGoodImg}
+          isGoodText={isGoodText}
+          isGoodAlt={isGoodAlt}
+          onClose={closePopupInfoToLip}
+          onCloseClick={handlePopupCloseClick} />
       </CurrentUserContext.Provider>
     </>
   );

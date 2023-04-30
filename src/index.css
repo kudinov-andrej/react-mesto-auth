@@ -29,6 +29,7 @@
 @import url(./blocks/popap/__input/popap__input.css);
 @import url(./blocks/popap/__error/popap__error.css);
 @import url(./blocks/popap/__button/popap__button.css);
+@import url(./blocks/popap/__img/popap__img.css);
 @import url(./blocks/popap/__button-close/popap__button-close.css);
 @import url(./blocks/popap/__button/_disabled/popap__button_disabled.css);
 @import url(./blocks/popap/__button/_type/popap__button_type_disabled.css);
