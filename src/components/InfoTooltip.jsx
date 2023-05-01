@@ -8,7 +8,7 @@ function InfoToLip(props) {
             <div className="popap__conteiner">
                 <button className="popap__button-close" type="button" onClick={props.onClose}></button>
                 <img className='popap__img' src={props.isGoodImg ? okImg : bedImg} alt={props.isGoodAlt ? "Изображение, регистрация успешна" : "Изображение, регистрация не успешна"} />
-                <h2 className="popap__title" style={{
+                <h2 className="popap__title popap__title_typy_info" style={{
                     alignSelf: 'center',
                     textAlign: 'center',
                     maxWidth: '358px',

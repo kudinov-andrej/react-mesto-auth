@@ -4,3 +4,20 @@
     align-items: center;
     gap: 24px;
 }
+
+@media screen and (max-width: 929px) {
+    .header__link-conteiner {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 929px) {
+    .header__link-conteiner-activ {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        order: 1;
+    }
+}

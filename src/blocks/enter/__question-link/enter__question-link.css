@@ -1,0 +1,17 @@
+.enter__question-link {
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+    max-width: 358px;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+.enter__question-link:hover {
+    cursor: pointer;
+
+}

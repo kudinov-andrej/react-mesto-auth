@@ -1,6 +1,7 @@
-.header__link {
+.enter__link {
     margin: 0;
     padding: 0;
+    margin-bottom: 80px;
     text-decoration: none;
     cursor: pointer;
     font-family: 'Inter';
@@ -11,12 +12,12 @@
     color: #FFFFFF;
 }
 
-.header__link:hover {
+.enter__link:hover {
     opacity: 0.6;
 }
 
-@media screen and (max-width: 929px) {
-    .header__link {
+@media screen and (max-width: 420px) {
+    .enter__link {
         margin-bottom: 40px;
     }
 }

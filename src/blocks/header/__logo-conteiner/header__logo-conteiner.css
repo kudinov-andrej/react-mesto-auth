@@ -1,0 +1,11 @@
+.header__logo-conteiner {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-top: solid 1px;
+    border-color: rgba(84, 84, 84, 0.3);
+
+
+}

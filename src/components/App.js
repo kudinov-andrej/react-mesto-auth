@@ -145,10 +145,6 @@ function App() {
     navigate("/sign-in");
   }
 
-
-
-
-
   function handlePopupCloseClick(evt) {
     if (isInfoToLipPopupOpen) {
       if (evt.target.classList.contains('popap')) {
@@ -250,6 +246,7 @@ function App() {
   return (
     <>
       <CurrentUserContext.Provider value={currentUser}>
+
         <Header
           logOut={logOut}
           userData={userData} />

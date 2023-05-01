@@ -1,0 +1,14 @@
+.enter {
+    margin: 0 auto;
+    padding: 0;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 358px;
+    background: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+
+}

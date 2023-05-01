@@ -8,8 +8,10 @@
     justify-content: space-between;
     border-bottom: solid 1px;
     border-color: rgba(84, 84, 84, 0.3);
-
+    border-top: solid 1px;
 }
+
+
 
 @media screen and (max-width: 601px) {
     .header {

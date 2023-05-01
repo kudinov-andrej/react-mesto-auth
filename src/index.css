@@ -5,8 +5,12 @@
 @import url(./blocks/header/header.css);
 @import url(./blocks/header/__logo/header__logo.css);
 @import url(./blocks/header/__link/header__link.css);
+@import url(./blocks/header/__link/_type/header__link_type_word.css);
 @import url(./blocks/header/__link-conteiner/header__link-conteiner.css);
 @import url(./blocks/header/__email/header__email.css);
+@import url(./blocks/header/__menu/header__menu.css);
+@import url(./blocks/header/__button/header__button.css);
+@import url(./blocks/header/__logo-conteiner/header__logo-conteiner.css);
 @import url(./blocks/content/content.css);
 @import url(./blocks/profile/profile.css);
 @import url(./blocks/profile/__block/profile__block.css);
@@ -25,6 +29,7 @@
 @import url(./blocks/popap/__photo-conteiner/popap__photo-conteiner.css);
 @import url(./blocks/popap/__conteiner/popap__conteiner.css);
 @import url(./blocks/popap/__title/popap__title.css);
+@import url(./blocks/popap/__title/_type/popap__title_typy_info.css);
 @import url(./blocks/popap/__form/popap__form.css);
 @import url(./blocks/popap/__input/popap__input.css);
 @import url(./blocks/popap/__error/popap__error.css);
@@ -52,3 +57,11 @@
 @import url(./blocks/photo-plase/__delete-button/_show/photo-plase__delete-button_show.css);
 @import url(./blocks/photo-plase/__like-conteiner/photo-plase__like-conteiner.css);
 @import url(./blocks/photo-plase/__counter-like/photo-plase__counter-like.css);
+@import url(./blocks/enter/enter.css);
+@import url(./blocks/enter/__title/enter__title.css);
+@import url(./blocks/enter/__form/enter__form.css);
+@import url(./blocks/enter/__input/enter__input.css);
+@import url(./blocks/enter/__link/enter__link.css);
+@import url(./blocks/enter/__question-link/enter__question-link.css);
+@import url(./blocks/enter/__button/enter__button.css);
+@import url(./blocks/enter/__button/_type/enter__button_type_register.css);

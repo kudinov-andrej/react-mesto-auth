@@ -1,0 +1,35 @@
+.enter__input {
+    margin: 0;
+    padding: 0;
+    width: 358px;
+    padding-bottom: 13px;
+    margin-bottom: 30px;
+    border: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    border-bottom: 2px solid #CCCCCC;
+    color: #FFFFFF;
+    background: #000000;
+}
+
+.enter__input:active,
+:hover,
+:focus {
+    outline: 0;
+    outline-offset: 0;
+
+}
+
+.enter__input:-webkit-autofill,
+.enter__input:-webkit-autofill:hover,
+.enter__input:-webkit-autofill:focus {
+    box-shadow: 0 0 0px 100px #000000 inset;
+    -webkit-text-fill-color: #FFFFFF;
+}
+
+@media screen and (max-width: 420px) {
+    .enter__input {
+        width: 260px;
+    }
+}

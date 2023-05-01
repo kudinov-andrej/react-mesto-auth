@@ -1,0 +1,27 @@
+.enter__button {
+    margin: 0;
+    padding: 0;
+    margin-top: 186px;
+    margin-bottom: 112px;
+    padding: 15px 84px;
+    cursor: pointer;
+    background: #FFFFFF;
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    min-width: 100%;
+}
+
+.enter__button:hover {
+    opacity: 0.85;
+}
+
+@media screen and (max-width: 420px) {
+    .enter__button {
+        margin-top: 141px;
+        padding: 14px 35px;
+    }
+}
