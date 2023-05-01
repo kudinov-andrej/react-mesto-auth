@@ -237,7 +237,7 @@ function App() {
 
   if (location.pathname === '/') {
     if (isLoading) {
-      return <div class="body__loader"></div>
+      return <div className="body__loader"></div>
     }
   }
 
