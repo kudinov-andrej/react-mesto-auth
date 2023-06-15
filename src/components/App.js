@@ -50,31 +50,6 @@ function App() {
     }
   }, [])
 
-  // console.log(jwt)
-
-  /*
-    useEffect(() => {
-      const jwt = localStorage.getItem("jwt");
-      setToken(jwt);
-  
-      //если нет токена, то не делаем запрос и меняем состояние isLoading
-      if (!jwt) {
-        setIsLoading(false);
-      }
-  
-      // если есть токен, то делаем запрос на сервер
-      auth.getUser(jwt).then((res) => {
-        //...
-      })
-      .catch((err) => {
-        //...
-      })
-      // в любом случае меняем состояние isLoading на false
-      .finally(()=>{
-        setIsLoading(false);
-      })
-    }, []);
-  */
 
   useEffect(() => {
     if (!token) {
