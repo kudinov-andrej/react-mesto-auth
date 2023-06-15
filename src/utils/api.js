@@ -1,4 +1,4 @@
- class Api {
+class Api {
     constructor(basePath, token) {
         this._basePath = basePath;
         this._token = token;
@@ -7,7 +7,7 @@
     _getHeaders() {
         return {
             "Content-Type": "application/json",
-            authorization: this._token,
+            authorization: `Bearer ${token}`,
         };
     }
 
@@ -89,9 +89,8 @@
 
 }
 
-const api= new Api(
-    "https://mesto.nomoreparties.co/v1/cohort-61/",
-    "8cfb2ade-293c-430d-a1cd-027f0315247f"
-  )
+const api = new Api(
+    "https://api.mesta.nomoredomains.rocks/"
+)
 
 export default api
