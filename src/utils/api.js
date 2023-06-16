@@ -7,7 +7,7 @@ class Api {
     _getHeaders() {
         return {
             "Content-Type": "application/json",
-            authorization: `Bearer ${token}`,
+            authorization: this._token,
         };
     }
 
@@ -90,12 +90,9 @@ class Api {
 }
 
 const api = new Api(
-<<<<<<< HEAD
     "https://mesto.nomoreparties.co/v1/cohort-61/",
     "8cfb2ade-293c-430d-a1cd-027f0315247f"
-=======
-    "https://api.mesta.nomoredomains.rocks/"
->>>>>>> 78e0f39415ba2c8f5e15d95de635771c43ca8b04
 )
 
 export default api
+
